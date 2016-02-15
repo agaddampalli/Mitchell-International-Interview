@@ -1,0 +1,9 @@
+c:\users\abhiramreddy\documents\visual studio 2013\Projects\MitchellClaimClient\MitchellClaimClient\bin\Debug\MitchellClaimClient.exe.config
+c:\users\abhiramreddy\documents\visual studio 2013\Projects\MitchellClaimClient\MitchellClaimClient\bin\Debug\MitchellClaimClient.exe
+c:\users\abhiramreddy\documents\visual studio 2013\Projects\MitchellClaimClient\MitchellClaimClient\bin\Debug\MitchellClaimClient.pdb
+c:\users\abhiramreddy\documents\visual studio 2013\Projects\MitchellClaimClient\MitchellClaimClient\obj\Debug\MitchellClaimClient.Properties.Resources.resources
+c:\users\abhiramreddy\documents\visual studio 2013\Projects\MitchellClaimClient\MitchellClaimClient\obj\Debug\MitchellClaimClient.csproj.GenerateResource.Cache
+c:\users\abhiramreddy\documents\visual studio 2013\Projects\MitchellClaimClient\MitchellClaimClient\obj\Debug\MitchellClaimClient.exe
+c:\users\abhiramreddy\documents\visual studio 2013\Projects\MitchellClaimClient\MitchellClaimClient\obj\Debug\MitchellClaimClient.pdb
+C:\Users\AbhiramReddy\Documents\Visual Studio 2013\Projects\MitchellClaimClient\MitchellClaimClient\obj\Debug\MitchellClaimClient.csprojResolveAssemblyReference.cache
+C:\Users\AbhiramReddy\Documents\Visual Studio 2013\Projects\MitchellClaimClient\MitchellClaimClient\obj\Debug\MitchellClaimClient.MitchellClient.resources

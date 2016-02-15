@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7ebdd4ca-f93d-4b80-8105-4a9e91f52c6c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://abhiram/MitchellService/MitchellService.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="MitchellService.xsd" MetadataType="Schema" ID="affe7016-cb89-4539-8097-6f6ea441cd16" SourceId="1" SourceUrl="http://abhiram/MitchellService/MitchellService.svc?xsd=xsd3" />
+    <MetadataFile FileName="MitchellClaimService.wsdl" MetadataType="Wsdl" ID="1cce2648-571d-43d4-8a4b-32bb5a4347de" SourceId="1" SourceUrl="http://abhiram/MitchellService/MitchellService.svc?wsdl" />
+    <MetadataFile FileName="MitchellService1.xsd" MetadataType="Schema" ID="1ddce725-47bd-42dd-bdbc-8395dab9bd64" SourceId="1" SourceUrl="http://abhiram/MitchellService/MitchellService.svc?xsd=xsd2" />
+    <MetadataFile FileName="MitchellService2.xsd" MetadataType="Schema" ID="3a9a2864-dfca-4c96-ab32-54547ded7bbf" SourceId="1" SourceUrl="http://abhiram/MitchellService/MitchellService.svc?xsd=xsd1" />
+    <MetadataFile FileName="MitchellService3.xsd" MetadataType="Schema" ID="bfc276e8-3333-4238-8829-038823a33255" SourceId="1" SourceUrl="http://abhiram/MitchellService/MitchellService.svc?xsd=xsd0" />
+    <MetadataFile FileName="MitchellService4.xsd" MetadataType="Schema" ID="114fe1f7-d645-4bee-8574-8cda59e585ce" SourceId="1" SourceUrl="http://abhiram/MitchellService/MitchellService.svc?xsd=xsd4" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

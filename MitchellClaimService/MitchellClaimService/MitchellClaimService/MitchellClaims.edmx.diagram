@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1562a3966e47489bb1f848ea818d3511" Name="Diagram1">
+        <EntityTypeShape EntityType="MitchellClaimsDbModel.causeOfLossCode" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="MitchellClaimsDbModel.lossInfo" Width="1.5" PointX="3" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MitchellClaimsDbModel.mitchellClaim" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MitchellClaimsDbModel.statusCode" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="MitchellClaimsDbModel.sysdiagram" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MitchellClaimsDbModel.vehicleInfo" Width="1.5" PointX="7.5" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="MitchellClaimsDbModel.FK_lossInfo_causeOfLossCode" ManuallyRouted="false" />
+        <AssociationConnector Association="MitchellClaimsDbModel.FK_mitchellClaims_lossInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="MitchellClaimsDbModel.FK_mitchellClaims_statusCode" ManuallyRouted="false" />
+        <AssociationConnector Association="MitchellClaimsDbModel.FK_vehicleInfo_mitchellClaims" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

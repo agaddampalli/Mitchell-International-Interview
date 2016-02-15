@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="MitchellClaimService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://abhiram/MitchellService/MitchellService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://abhiram/MitchellService/MitchellService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MitchellClaimService.DataContracts" />
+      <xsd:import schemaLocation="http://abhiram/MitchellService/MitchellService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://abhiram/MitchellService/MitchellService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/MitchellClaimService.Utils" />
+      <xsd:import schemaLocation="http://abhiram/MitchellService/MitchellService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IMitchellClaimService_CreateClaim_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateClaim" />
+  </wsdl:message>
+  <wsdl:message name="IMitchellClaimService_CreateClaim_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateClaimResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMitchellClaimService_CreateClaim_MitchellFaultFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/MitchellClaimService.DataContracts" name="detail" element="q1:MitchellFault" />
+  </wsdl:message>
+  <wsdl:message name="IMitchellClaimService_GetClaim_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClaim" />
+  </wsdl:message>
+  <wsdl:message name="IMitchellClaimService_GetClaim_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClaimResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMitchellClaimService_GetClaim_MitchellFaultFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/MitchellClaimService.DataContracts" name="detail" element="q2:MitchellFault" />
+  </wsdl:message>
+  <wsdl:message name="IMitchellClaimService_GetClaimByDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClaimByDate" />
+  </wsdl:message>
+  <wsdl:message name="IMitchellClaimService_GetClaimByDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClaimByDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMitchellClaimService_GetClaimByDate_MitchellFaultFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/MitchellClaimService.DataContracts" name="detail" element="q3:MitchellFault" />
+  </wsdl:message>
+  <wsdl:message name="IMitchellClaimService_GetVehicleDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleDetails" />
+  </wsdl:message>
+  <wsdl:message name="IMitchellClaimService_GetVehicleDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMitchellClaimService_GetVehicleDetails_MitchellFaultFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/MitchellClaimService.DataContracts" name="detail" element="q4:MitchellFault" />
+  </wsdl:message>
+  <wsdl:message name="IMitchellClaimService_UpdateClaim_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateClaim" />
+  </wsdl:message>
+  <wsdl:message name="IMitchellClaimService_UpdateClaim_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateClaimResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMitchellClaimService_UpdateClaim_MitchellFaultFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/MitchellClaimService.DataContracts" name="detail" element="q5:MitchellFault" />
+  </wsdl:message>
+  <wsdl:message name="IMitchellClaimService_DeleteClaim_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteClaim" />
+  </wsdl:message>
+  <wsdl:message name="IMitchellClaimService_DeleteClaim_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteClaimResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMitchellClaimService_DeleteClaim_MitchellFaultFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/MitchellClaimService.DataContracts" name="detail" element="q6:MitchellFault" />
+  </wsdl:message>
+  <wsdl:portType name="IMitchellClaimService">
+    <wsdl:operation name="CreateClaim">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMitchellClaimService/CreateClaim" message="tns:IMitchellClaimService_CreateClaim_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMitchellClaimService/CreateClaimResponse" message="tns:IMitchellClaimService_CreateClaim_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMitchellClaimService/CreateClaimMitchellFaultFault" name="MitchellFaultFault" message="tns:IMitchellClaimService_CreateClaim_MitchellFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClaim">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMitchellClaimService/GetClaim" message="tns:IMitchellClaimService_GetClaim_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMitchellClaimService/GetClaimResponse" message="tns:IMitchellClaimService_GetClaim_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMitchellClaimService/GetClaimMitchellFaultFault" name="MitchellFaultFault" message="tns:IMitchellClaimService_GetClaim_MitchellFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClaimByDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMitchellClaimService/GetClaimByDate" message="tns:IMitchellClaimService_GetClaimByDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMitchellClaimService/GetClaimByDateResponse" message="tns:IMitchellClaimService_GetClaimByDate_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMitchellClaimService/GetClaimByDateMitchellFaultFault" name="MitchellFaultFault" message="tns:IMitchellClaimService_GetClaimByDate_MitchellFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMitchellClaimService/GetVehicleDetails" message="tns:IMitchellClaimService_GetVehicleDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMitchellClaimService/GetVehicleDetailsResponse" message="tns:IMitchellClaimService_GetVehicleDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMitchellClaimService/GetVehicleDetailsMitchellFaultFault" name="MitchellFaultFault" message="tns:IMitchellClaimService_GetVehicleDetails_MitchellFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateClaim">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMitchellClaimService/UpdateClaim" message="tns:IMitchellClaimService_UpdateClaim_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMitchellClaimService/UpdateClaimResponse" message="tns:IMitchellClaimService_UpdateClaim_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMitchellClaimService/UpdateClaimMitchellFaultFault" name="MitchellFaultFault" message="tns:IMitchellClaimService_UpdateClaim_MitchellFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteClaim">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMitchellClaimService/DeleteClaim" message="tns:IMitchellClaimService_DeleteClaim_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMitchellClaimService/DeleteClaimResponse" message="tns:IMitchellClaimService_DeleteClaim_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMitchellClaimService/DeleteClaimMitchellFaultFault" name="MitchellFaultFault" message="tns:IMitchellClaimService_DeleteClaim_MitchellFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IMitchellClaimService" type="tns:IMitchellClaimService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateClaim">
+      <soap:operation soapAction="http://tempuri.org/IMitchellClaimService/CreateClaim" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MitchellFaultFault">
+        <soap:fault use="literal" name="MitchellFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetClaim">
+      <soap:operation soapAction="http://tempuri.org/IMitchellClaimService/GetClaim" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MitchellFaultFault">
+        <soap:fault use="literal" name="MitchellFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetClaimByDate">
+      <soap:operation soapAction="http://tempuri.org/IMitchellClaimService/GetClaimByDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MitchellFaultFault">
+        <soap:fault use="literal" name="MitchellFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleDetails">
+      <soap:operation soapAction="http://tempuri.org/IMitchellClaimService/GetVehicleDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MitchellFaultFault">
+        <soap:fault use="literal" name="MitchellFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateClaim">
+      <soap:operation soapAction="http://tempuri.org/IMitchellClaimService/UpdateClaim" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MitchellFaultFault">
+        <soap:fault use="literal" name="MitchellFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteClaim">
+      <soap:operation soapAction="http://tempuri.org/IMitchellClaimService/DeleteClaim" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MitchellFaultFault">
+        <soap:fault use="literal" name="MitchellFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MitchellClaimService">
+    <wsdl:port name="BasicHttpBinding_IMitchellClaimService" binding="tns:BasicHttpBinding_IMitchellClaimService">
+      <soap:address location="http://abhiram/MitchellService/MitchellService.svc/employeeservice" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

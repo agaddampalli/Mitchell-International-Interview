@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MitchellClaimsDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="causeOfLossCode">
+    <Key>
+      <PropertyRef Name="CauseOfLossId" />
+    </Key>
+    <Property Name="CauseOfLossId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LossCodeType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="lossInfoes" Relationship="Self.FK_lossInfo_causeOfLossCode" FromRole="causeOfLossCode" ToRole="lossInfo" />
+  </EntityType>
+  <EntityType Name="lossInfo">
+    <Key>
+      <PropertyRef Name="LossInfoId" />
+    </Key>
+    <Property Name="LossInfoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CauseOfLossId" Type="Int32" Nullable="false" />
+    <Property Name="ReportedDate" Type="DateTime" Precision="3" />
+    <Property Name="LossDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="causeOfLossCode" Relationship="Self.FK_lossInfo_causeOfLossCode" FromRole="lossInfo" ToRole="causeOfLossCode" />
+    <NavigationProperty Name="mitchellClaim" Relationship="Self.FK_lossInfo_claimNumber" FromRole="lossInfo" ToRole="mitchellClaims" />
+  </EntityType>
+  <EntityType Name="mitchellClaim">
+    <Key>
+      <PropertyRef Name="ClaimNumber" />
+    </Key>
+    <Property Name="ClaimNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ClaimantFirstName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimantLastName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="LossDate" Type="DateTime" Precision="3" />
+    <Property Name="AssignedAdjusterID" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="lossInfoes" Relationship="Self.FK_lossInfo_claimNumber" FromRole="mitchellClaims" ToRole="lossInfo" />
+    <NavigationProperty Name="statusCode" Relationship="Self.FK_mitchellClaims_statusCode" FromRole="mitchellClaims" ToRole="statusCode" />
+    <NavigationProperty Name="vehicleInfoes" Relationship="Self.FK_vehicleInfo_mitchellClaims" FromRole="mitchellClaims" ToRole="vehicleInfo" />
+  </EntityType>
+  <EntityType Name="statusCode">
+    <Key>
+      <PropertyRef Name="StausId" />
+    </Key>
+    <Property Name="StausId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StatusCode1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="mitchellClaims" Relationship="Self.FK_mitchellClaims_statusCode" FromRole="statusCode" ToRole="mitchellClaims" />
+  </EntityType>
+  <EntityType Name="vehicleInfo">
+    <Key>
+      <PropertyRef Name="Vin" />
+    </Key>
+    <Property Name="Vin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ModelYear" Type="Int32" />
+    <Property Name="MakeDescription" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ModelDescription" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="EngineDescription" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ExteriorColor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LicPlate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LicPlateState" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LicPlateExpDate" Type="DateTime" Precision="3" />
+    <Property Name="DamageDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Mileage" Type="Int32" />
+    <Property Name="ClaimNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="mitchellClaim" Relationship="Self.FK_vehicleInfo_mitchellClaims" FromRole="vehicleInfo" ToRole="mitchellClaims" />
+  </EntityType>
+  <Association Name="FK_lossInfo_causeOfLossCode">
+    <End Role="causeOfLossCode" Type="Self.causeOfLossCode" Multiplicity="1" />
+    <End Role="lossInfo" Type="Self.lossInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="causeOfLossCode">
+        <PropertyRef Name="CauseOfLossId" />
+      </Principal>
+      <Dependent Role="lossInfo">
+        <PropertyRef Name="CauseOfLossId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_lossInfo_claimNumber">
+    <End Role="mitchellClaims" Type="Self.mitchellClaim" Multiplicity="1" />
+    <End Role="lossInfo" Type="Self.lossInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mitchellClaims">
+        <PropertyRef Name="ClaimNumber" />
+      </Principal>
+      <Dependent Role="lossInfo">
+        <PropertyRef Name="ClaimNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mitchellClaims_statusCode">
+    <End Role="statusCode" Type="Self.statusCode" Multiplicity="1" />
+    <End Role="mitchellClaims" Type="Self.mitchellClaim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="statusCode">
+        <PropertyRef Name="StausId" />
+      </Principal>
+      <Dependent Role="mitchellClaims">
+        <PropertyRef Name="Status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_vehicleInfo_mitchellClaims">
+    <End Role="mitchellClaims" Type="Self.mitchellClaim" Multiplicity="0..1" />
+    <End Role="vehicleInfo" Type="Self.vehicleInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mitchellClaims">
+        <PropertyRef Name="ClaimNumber" />
+      </Principal>
+      <Dependent Role="vehicleInfo">
+        <PropertyRef Name="ClaimNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MitchellClaimsDbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="causeOfLossCodes" EntityType="Self.causeOfLossCode" />
+    <EntitySet Name="lossInfoes" EntityType="Self.lossInfo" />
+    <EntitySet Name="mitchellClaims" EntityType="Self.mitchellClaim" />
+    <EntitySet Name="statusCodes" EntityType="Self.statusCode" />
+    <EntitySet Name="vehicleInfoes" EntityType="Self.vehicleInfo" />
+    <AssociationSet Name="FK_lossInfo_causeOfLossCode" Association="Self.FK_lossInfo_causeOfLossCode">
+      <End Role="causeOfLossCode" EntitySet="causeOfLossCodes" />
+      <End Role="lossInfo" EntitySet="lossInfoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_lossInfo_claimNumber" Association="Self.FK_lossInfo_claimNumber">
+      <End Role="mitchellClaims" EntitySet="mitchellClaims" />
+      <End Role="lossInfo" EntitySet="lossInfoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mitchellClaims_statusCode" Association="Self.FK_mitchellClaims_statusCode">
+      <End Role="statusCode" EntitySet="statusCodes" />
+      <End Role="mitchellClaims" EntitySet="mitchellClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_vehicleInfo_mitchellClaims" Association="Self.FK_vehicleInfo_mitchellClaims">
+      <End Role="mitchellClaims" EntitySet="mitchellClaims" />
+      <End Role="vehicleInfo" EntitySet="vehicleInfoes" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

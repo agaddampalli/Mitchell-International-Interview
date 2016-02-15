@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/MitchellClaimService.DataContracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/MitchellClaimService.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://abhiram/MitchellService/MitchellService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/MitchellClaimService.Utils" />
+  <xs:complexType name="MitchellFault">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MitchellFault" nillable="true" type="tns:MitchellFault" />
+  <xs:complexType name="MitchellClaim">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AssignedAdjusterID" type="xs:long" />
+      <xs:element name="ClaimNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClaimantFirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClaimantLastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LossDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LossInfo" nillable="true" type="tns:LossInfo" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/MitchellClaimService.Utils" minOccurs="0" name="Status" type="q1:StatusCode" />
+      <xs:element name="Vehicles" nillable="true" type="tns:ArrayOfVehicleDetails" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MitchellClaim" nillable="true" type="tns:MitchellClaim" />
+  <xs:complexType name="LossInfo">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/MitchellClaimService.Utils" minOccurs="0" name="CauseOfLoss" type="q2:CauseOfLossCode" />
+      <xs:element minOccurs="0" name="LossDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportedDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LossInfo" nillable="true" type="tns:LossInfo" />
+  <xs:complexType name="ArrayOfVehicleDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VehicleDetails" nillable="true" type="tns:VehicleDetails" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVehicleDetails" nillable="true" type="tns:ArrayOfVehicleDetails" />
+  <xs:complexType name="VehicleDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DamageDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EngineDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExteriorColor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LicPlate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LicPlateExpDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LicPlateState" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MakeDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mileage" type="xs:int" />
+      <xs:element minOccurs="0" name="ModelDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModelYear" type="xs:int" />
+      <xs:element minOccurs="0" name="Vin" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VehicleDetails" nillable="true" type="tns:VehicleDetails" />
+</xs:schema>
